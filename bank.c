@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-struct BankAccount {
+    struct BankAccount {
     int accountNumber;
     char accountHolder[100];
     float balance;
 };
-
 void createAccount(struct BankAccount *account) {
     printf("Enter account number: ");
     scanf("%d", &(account->accountNumber));
@@ -13,11 +12,9 @@ void createAccount(struct BankAccount *account) {
     printf("Enter account holder name: ");
     scanf("%s", account->accountHolder);
     
-    account->balance = 0.0;
-    
+    account->balance = 0.0;  
     printf("Account created successfully!\n");
 }
-
 void deposit(struct BankAccount *account) {
     float amount;
     printf("Enter the amount to deposit: ");
@@ -27,7 +24,6 @@ void deposit(struct BankAccount *account) {
     
     printf("Deposit successful! Current balance: %.2f\n", account->balance);
 }
-
 void withdraw(struct BankAccount *account) {
     float amount;
     printf("Enter the amount to withdraw: ");
@@ -40,13 +36,11 @@ void withdraw(struct BankAccount *account) {
         printf("Withdrawal successful! Current balance: %.2f\n", account->balance);
     }
 }
-
 void checkBalance(struct BankAccount *account) {
     printf("Account holder: %s\n", account->accountHolder);
     printf("Account number: %d\n", account->accountNumber);
     printf("Balance: %.2f\n", account->balance);
 }
-
 int main() {
     struct BankAccount account;
     int choice;
